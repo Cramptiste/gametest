@@ -1,7 +1,6 @@
--- les includes
 
 
--- les variables 
+
 player = {}
 player.size = 64
 player.posX = 128
@@ -14,21 +13,20 @@ enemy.y = 192
 
 score = 5
 
--- police écriture
+
 
 font = love.graphics.newFont("assets/fonts/mrrobot.ttf", 24)
--- fonctions love2d
-function love.load() -- initialiser, se charge au lancement
-	-- pour avoir un random aléatoire
+
+function love.load()
 	math.randomseed(os.time())
 	love.graphics.setBackgroundColor(1,1,1)
 end
 
-function love.update(dt) -- tourne en boucle, 60 fois par seconde
+function love.update(dt)
 	input_utilisateur(dt)
 end
 
-function love.draw() -- dessine à l'écran
+function love.draw() 
 	love.graphics.setColor(0, 0, 1, 0.8)
 	love.graphics.rectangle("fill", player.posX, player.posY, player.size, player.size)
 	love.graphics.setColor(1, 0, 0, 0.8)
